@@ -1,9 +1,10 @@
 const superagent = require('superagent');
 const fs = require('fs');
 const settings = require('./settings/settings.json');
-
+const {sendmessage} = require('./src/mailgun')
 var urls = fs.readFileSync('settings/urls.txt').toString().split(',');
-
+const {printascii} = require('./src/printascii');
+printascii()
 
 setInterval(() => {
 
@@ -51,6 +52,14 @@ const gettime = () => {
 }
 
 const log = (txt) => {
+    if(settings.mailgunkey) {
+        sendmessage(`
+        New Websentinal notification:
+        ${txt}
+        `)
+    }
+
+
     try {
         fs.writeFileSync(`logs/${getdate()}.log`,fs.readFileSync(`logs/${getdate()}.log`) + '\n' + gettime() + ' ' + txt)
     } catch (error) {

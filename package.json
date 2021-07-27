@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mailgun-js": "^0.6.7",
     "superagent": "^6.1.0",
     "superagent-no-cache": "^0.1.1"
   }

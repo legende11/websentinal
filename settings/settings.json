@@ -1,3 +1,7 @@
 {
-    "interval": 1
+    "interval": 60,
+    "mailgunenabled": false,
+    "mailgunkey": "your own api key?",
+    "mailgundomain": "the mailgun domain",
+    "reciever": "your email"
 }
