@@ -11,3 +11,6 @@ http://www.example.com,https://www.example.nl
 and the interval in settings.json is in seconds
 
 
+# first time setup
+
+when first setting up please add a cache folder. otherwise the code will not work.
