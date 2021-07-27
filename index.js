@@ -2,10 +2,10 @@ const superagent = require('superagent');
 const fs = require('fs');
 const settings = require('./settings/settings.json');
 
+var urls = fs.readFileSync('settings/urls.txt').toString().split(',');
 
 
 setInterval(() => {
-var urls = fs.readFileSync('settings/urls.txt').toString().split(',');
 
 urls.forEach(url => {
 superagent.get(url).end((err,res) => {
@@ -52,7 +52,7 @@ const gettime = () => {
 
 const log = (txt) => {
     try {
-        fs.writeFileSync(`logs/${getdate()}.log`,fs.readFileSync(`logs/${getdate()}.log`) + '\n' + txt)
+        fs.writeFileSync(`logs/${getdate()}.log`,fs.readFileSync(`logs/${getdate()}.log`) + '\n' + gettime() + ' ' + txt)
     } catch (error) {
         fs.writeFileSync(`logs/${getdate()}.log`,`${gettime()} ` + txt)
     }
