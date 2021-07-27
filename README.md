@@ -1,6 +1,6 @@
 ### websentinal
 
-#usage:
+# usage:
 
 check the settings folder for valuable settings.
 
