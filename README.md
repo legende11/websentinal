@@ -1,4 +1,4 @@
-### websentinal
+### websentry
 
 # usage:
 
